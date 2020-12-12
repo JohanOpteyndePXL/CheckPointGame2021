@@ -7,8 +7,10 @@ public class Plant {
 	private static final Random RANDOM = new Random();
 
 	/**
-	 * A new plant with adjacent rooms is created. The are three types of rooms.
-	 * @return the first room
+	 * Create a new plant with adjacent rooms. The are four types of rooms: ordinary Rooms, TreasureRooms,
+	 * Laboratories and CheckPoints.
+	 *
+	 * @return the first room, where the player starts exploring the plant.
 	 */
 	public static Room createPlant() {
 		Item stethoscope = new Item("stethoscoop", 350);
