@@ -68,6 +68,15 @@ public class CheckPointGame {
 		if ("EXIT".equals(command)) {
 			return null;
 		}
+		if ("MISSION".equals(command)) {
+			System.out.println(Plant.MISSION_TARGET);
+			return currentRoom;
+		}
+		if ("WHOAMI".equals(command)) {
+			System.out.println(player.getName());
+			return currentRoom;
+
+		}
 		System.out.println("Unknown command.");
 		return currentRoom;
 	}
@@ -80,5 +89,4 @@ public class CheckPointGame {
 		}
 		return false;
 	}
-
 }

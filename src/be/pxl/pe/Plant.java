@@ -5,12 +5,12 @@ import java.util.Random;
 public class Plant {
 
 	private static final Random RANDOM = new Random();
+	public static int MISSION_TARGET;
 
 	/**
-	 * Create a new plant with adjacent rooms. The are four types of rooms: ordinary Rooms, TreasureRooms,
-	 * Laboratories and CheckPoints.
+	 * A new plant with adjacent rooms is created. The are three types of rooms.
 	 *
-	 * @return the first room, where the player starts exploring the plant.
+	 * @return the first room
 	 */
 	public static Room createPlant() {
 		Item stethoscope = new Item("stethoscoop", 350);
@@ -29,8 +29,8 @@ public class Plant {
 		Room crewQuarters = new TreasureRoom("Crew Quarters", mug);
 		Room kitchen = new Room("Kitchen");
 		Room studyRoom = new TreasureRoom("Study room", brochure);
-		int valueNeeded = RANDOM.nextInt(1991) + 30;
-		Room securityCheckpoint = new CheckPoint("Security Checkpoint", valueNeeded);
+		MISSION_TARGET = RANDOM.nextInt(1991) + 30;
+		Room securityCheckpoint = new CheckPoint("Security Checkpoint", MISSION_TARGET);
 		Room arcade = new TreasureRoom("Arcade", sand);
 		hallway.setDoor(Direction.NORTH, crewQuarters);
 		hallway.setDoor(Direction.SOUTH, sickBay);
@@ -44,8 +44,7 @@ public class Plant {
 		arcade.setDoor(Direction.SOUTH, observatory);
 		studyRoom.setDoor(Direction.SOUTH, crewQuarters);
 		observatory.setDoor(Direction.EAST, crewQuarters);
-		System.out.println("You're mission is MIV" + valueNeeded);
+		System.out.println("You're mission is MIV" + MISSION_TARGET);
 		return hallway;
 	}
-
 }
