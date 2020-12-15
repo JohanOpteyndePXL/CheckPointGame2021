@@ -1,5 +1,5 @@
 package be.pxl.pe;
-
+//testje
 public class DirectionUtil {
 
 	public static Direction getOpposite(Direction direction) {
