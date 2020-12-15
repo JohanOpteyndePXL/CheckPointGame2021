@@ -1,5 +1,5 @@
 package be.pxl.pe;
-
+//test github
 import java.util.Scanner;
 
 public class CheckPointGame {
